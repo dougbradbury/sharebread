@@ -2,11 +2,16 @@ Share Bread
 
 This app helps people come together to collect stuff to give away.
 
+
+*********************************************************************************
 Home Page:
+*********************************************************************************
 	Intro / Description
 	Start New Drive
-
+	
+*********************************************************************************
 New Drive:
+*********************************************************************************
 	Drive Name
 	Sign up by Date
 	Collect by date
@@ -21,7 +26,10 @@ New Drive:
 		
 	Start Drive >
 	
+	
+*********************************************************************************	
 Create Drive List
+*********************************************************************************
 	From template
 		Welcome To America Pack
 		Back to School Drive
@@ -34,8 +42,9 @@ Create Drive List
 	
 	Edit Drive List >
 	
+*********************************************************************************	
 Drive List
-
+*********************************************************************************
 	Item						Quantity	
 	Silverware Set		1						delete
 	Pillows					4						delete
@@ -45,15 +54,17 @@ Drive List
 	
 	Invite Participants >
 	
+*********************************************************************************
 Invite Participants 
-
+*********************************************************************************
 Emails:
 Large Text area - comma or newline separated.
 
 Invite >
 
+*********************************************************************************
 Organizer's Page
-
+*********************************************************************************
  
 Item						Quantity					Committed					Collected
 Silverware Set		[1]									0									[0]						delete
@@ -62,7 +73,9 @@ Pillows					[4]									0									[0]						delete
 Add Item (in place JS)
 Invite More
 
+*********************************************************************************
 Invite Email
+*********************************************************************************
 
 Doug Bradbury has invited you to participate in the Welcome to American Palatine Small group Drive.
 
@@ -78,7 +91,9 @@ Participate Page
 
 	Sign Me Up >
 
+*********************************************************************************
 Paticipantion Confirmation
+*********************************************************************************
 	Thanks for signing up for
 		1 Silverware Set
 		2 Pillows
@@ -86,8 +101,9 @@ Paticipantion Confirmation
 	<<Collection Info>>
 	Invite other to join in >
 
-
+*********************************************************************************
 Email Confirmation:
+*********************************************************************************
  Dear Joe,
 		You have signed up to collect the following items for the Welcome to America Palatine Small group Drive.
 			1 Silverware Set
@@ -96,15 +112,19 @@ Email Confirmation:
 			Item must be collected by 7/7/2007
 			<<Collection Info>>	
 	Change my commitment > 
-	
+
+*********************************************************************************
 Email to Organizer
+*********************************************************************************
 Joe <jo@example.com> has signed up to collect
 		1 Silverware Set
 		2 Pillows
 		
 		See Drive Progress > (link to organizer's page)
 		
+*********************************************************************************
 Organizer's Page by Person
+*********************************************************************************
 	James <james@example.com> has not viewed invitation [resend >]
 
 	Joe <joe@example.com>  [Poke >]
@@ -114,8 +134,10 @@ Organizer's Page by Person
 
 	Mary mary@example.com viewed on 7/2/07 [Poke >]
 
-	
+
+*********************************************************************************
 Email Reminder (3 days before collection date)
+*********************************************************************************
  Dear Joe,
 		Just a reminder, the collection date is approaching for the Welcome to America Palatine Small group Drive  You signed up for:
 			1 Silverware Set
@@ -126,13 +148,9 @@ Email Reminder (3 days before collection date)
 	Change my commitment > 
 	
 	
-	
-	
-	
-	
-	
-	
+*********************************************************************************
 Other Ideas:
+*********************************************************************************
 	Facebook integration
 	Tweet this
 	Public Drive vs Invitation Only Drive
