@@ -1,0 +1,18 @@
+<h1>Listing drives</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @drives.each do |drive| %>
+  <tr>
+    <td><%= link_to 'Show', drive_path(drive) %></td>
+    <td><%= link_to 'Edit', edit_drive_path(drive) %></td>
+    <td><%= link_to 'Destroy', drive_path(drive), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New drive', new_drive_path %>

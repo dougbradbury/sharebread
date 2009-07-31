@@ -1,0 +1,1074 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MainController#index (for 127.0.0.1 at 2009-07-30 08:18:47) [GET]
+Rendering main/index
+Completed in 42ms (View: 41, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MainController#index (for 127.0.0.1 at 2009-07-30 08:19:03) [GET]
+Rendering main/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-30 08:19:04) [GET]
+
+ActionController::RoutingError (No route matches "/drive/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-30 08:20:13) [GET]
+
+ActionController::RoutingError (No route matches "/drive/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MainController#index (for 127.0.0.1 at 2009-07-30 08:20:31) [GET]
+Rendering main/index
+Completed in 6ms (View: 5, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-30 08:20:33) [GET]
+
+ActionController::RoutingError (No route matches "/drive" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-30 08:20:43) [GET]
+
+ActionController::RoutingError (No route matches "/drive" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 08:20:46) [GET]
+  [4;36;1mDrive Load (0.0ms)[0m   [0;1mPGError: ERROR: relation "drives" does not exist
+: SELECT * FROM "drives" [0m
+
+ActiveRecord::StatementInvalid (PGError: ERROR:  relation "drives" does not exist
+: SELECT * FROM "drives" ):
+  app/controllers/drives_controller.rb:5:in `index'
+
+Rendered rescues/_trace (87.2ms)
+Rendered rescues/_request_and_response (19.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDrives (20090730124749)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (12.5ms)[0m   [0;1mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 08:22:36) [GET]
+  [4;36;1mDrive Load (1.6ms)[0m   [0;1mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+
+ActionView::TemplateError (undefined local variable or method `new_drive_path' for #<ActionView::Base:0x2726a6c>) on line #18 of app/views/drives/index.html.erb:
+15: 
+16: <br />
+17: 
+18: <%= link_to 'New drive', new_drive_path %>
+
+    app/views/drives/index.html.erb:18
+    app/controllers/drives_controller.rb:7:in `index'
+
+Rendered rescues/_trace (89.3ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MainController#index (for 127.0.0.1 at 2009-07-30 08:25:21) [GET]
+Rendering main/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 08:25:23) [GET]
+  [4;36;1mDrive Load (1.6ms)[0m   [0;1mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+
+ActionView::TemplateError (undefined local variable or method `new_drive_path' for #<ActionView::Base:0x26d1724>) on line #18 of app/views/drives/index.html.erb:
+15: 
+16: <br />
+17: 
+18: <%= link_to 'New drive', new_drive_path %>
+
+    app/views/drives/index.html.erb:18
+    app/controllers/drives_controller.rb:7:in `index'
+
+Rendered rescues/_trace (95.0ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 08:29:32) [GET]
+  [4;36;1mDrive Load (1.8ms)[0m   [0;1mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 19ms (View: 13, DB: 5) | 200 OK [http://localhost/drives]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-07-30 08:29:37) [GET]
+
+NameError (uninitialized constant DriveController):
+  
+
+Rendered rescues/_trace (25.1ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-30 08:30:46) [GET]
+
+ActionController::RoutingError (No route matches "/drive/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:30:52) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 61ms (View: 53, DB: 0) | 200 OK [http://localhost/drives/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 08:30:54) [GET]
+  [4;36;1mDrive Load (1.3ms)[0m   [0;1mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+
+ActionView::TemplateError (undefined local variable or method `new_drives_path' for #<ActionView::Base:0x2661104>) on line #18 of app/views/drives/index.html.erb:
+15: 
+16: <br />
+17: 
+18: <%= link_to 'New drive', new_drives_path %>
+
+    app/views/drives/index.html.erb:18
+    app/controllers/drives_controller.rb:7:in `index'
+
+Rendered rescues/_trace (39.5ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 08:31:16) [GET]
+  [4;35;1mDrive Load (1.5ms)[0m   [0mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+
+ActionView::TemplateError (undefined local variable or method `new_drive_path' for #<ActionView::Base:0x26f6dbc>) on line #18 of app/views/drives/index.html.erb:
+15: 
+16: <br />
+17: 
+18: <%= link_to 'New drive', new_drive_path %>
+
+    app/views/drives/index.html.erb:18
+    app/controllers/drives_controller.rb:7:in `index'
+
+Rendered rescues/_trace (91.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MainController#index (for 127.0.0.1 at 2009-07-30 08:36:28) [GET]
+Rendering main/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 08:36:29) [GET]
+  [4;36;1mDrive Load (1.5ms)[0m   [0;1mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 14ms (View: 9, DB: 2) | 200 OK [http://localhost/drives]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:36:31) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+
+ActionView::TemplateError (undefined method `drives_path' for #<ActionView::Base:0x2691368>) on line #3 of app/views/drives/new.html.erb:
+1: <h1>New drive</h1>
+2: 
+3: <% form_for(@drive) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/drives/new.html.erb:3
+    app/controllers/drives_controller.rb:29:in `new'
+
+Rendered rescues/_trace (40.8ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.5ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:36:48) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+
+ActionView::TemplateError (undefined method `drives_path' for #<ActionView::Base:0x26e39c4>) on line #3 of app/views/drives/new.html.erb:
+1: <h1>New drive</h1>
+2: 
+3: <% form_for(@drive) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/drives/new.html.erb:3
+    app/controllers/drives_controller.rb:29:in `new'
+
+Rendered rescues/_trace (92.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:40:53) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+
+ActionView::TemplateError (undefined method `drives_path' for #<ActionView::Base:0x273e5e0>) on line #3 of app/views/drives/new.html.erb:
+1: <h1>New drive</h1>
+2: 
+3: <% form_for(@drive) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/drives/new.html.erb:3
+    app/controllers/drives_controller.rb:29:in `new'
+
+Rendered rescues/_trace (103.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-30 08:41:14) [GET]
+
+ActionController::RoutingError (No route matches "/drive/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:41:24) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/drives/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 08:41:30) [GET]
+  [4;35;1mDrive Load (2.5ms)[0m   [0mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+
+ActionView::TemplateError (undefined local variable or method `new_drive_path' for #<ActionView::Base:0x26fe990>) on line #18 of app/views/drives/index.html.erb:
+15: 
+16: <br />
+17: 
+18: <%= link_to 'New drive', new_drive_path %>
+
+    app/views/drives/index.html.erb:18
+    app/controllers/drives_controller.rb:7:in `index'
+
+Rendered rescues/_trace (90.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 08:42:31) [GET]
+  [4;36;1mDrive Load (1.5ms)[0m   [0;1mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+
+ActionView::TemplateError (undefined local variable or method `new_drives_path' for #<ActionView::Base:0x280c6e8>) on line #18 of app/views/drives/index.html.erb:
+15: 
+16: <br />
+17: 
+18: <%= link_to 'New drive', new_drives_path %>
+
+    app/views/drives/index.html.erb:18
+    app/controllers/drives_controller.rb:7:in `index'
+
+Rendered rescues/_trace (36.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 08:43:32) [GET]
+  [4;35;1mDrive Load (1.5ms)[0m   [0mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+
+ActionView::TemplateError (undefined local variable or method `new_drive_url' for #<ActionView::Base:0x266ad08>) on line #18 of app/views/drives/index.html.erb:
+15: 
+16: <br />
+17: 
+18: <%= link_to 'New drive', new_drive_url %>
+
+    app/views/drives/index.html.erb:18
+    app/controllers/drives_controller.rb:7:in `index'
+
+Rendered rescues/_trace (39.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 08:44:12) [GET]
+  [4;36;1mDrive Load (1.4ms)[0m   [0;1mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 9ms (View: 4, DB: 3) | 200 OK [http://localhost/drives/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:44:14) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/drives/new]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:44:44) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+
+ActionView::TemplateError (undefined method `text' for #<ActionView::Helpers::FormBuilder:0x264e234>) on line #5 of app/views/drives/new.html.erb:
+2: 
+3: <% form_for(@drive) do |f| %>
+4:   <%= f.error_messages %>
+5: 	<%= f.text :name %>
+6: 
+7:   <p>
+8:     <%= f.submit 'Create' %>
+
+    app/views/drives/new.html.erb:5
+    app/views/drives/new.html.erb:3
+    app/controllers/drives_controller.rb:29:in `new'
+
+Rendered rescues/_trace (37.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:44:50) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+
+ActionView::TemplateError (undefined method `text_box' for #<ActionView::Helpers::FormBuilder:0x26b7e50>) on line #5 of app/views/drives/new.html.erb:
+2: 
+3: <% form_for(@drive) do |f| %>
+4:   <%= f.error_messages %>
+5: 	<%= f.text_box :name %>
+6: 
+7:   <p>
+8:     <%= f.submit 'Create' %>
+
+    app/views/drives/new.html.erb:5
+    app/views/drives/new.html.erb:3
+    app/controllers/drives_controller.rb:29:in `new'
+
+Rendered rescues/_trace (39.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:45:17) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/drives/new]
+  [4;35;1mSQL (0.9ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:46:00) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+
+ActionView::TemplateError (undefined method `date' for #<ActionView::Helpers::FormBuilder:0x26a014c>) on line #6 of app/views/drives/new.html.erb:
+3: <% form_for(@drive) do |f| %>
+4:   <%= f.error_messages %>
+5: 	Name This Drive:  <%= f.text_field :name %></br>
+6: 	Sign up by:  <%= f.date :sign_up_by %></br>
+7: 
+8:   <p>
+9:     <%= f.submit 'Create' %>
+
+    app/views/drives/new.html.erb:6
+    app/views/drives/new.html.erb:3
+    app/controllers/drives_controller.rb:29:in `new'
+
+Rendered rescues/_trace (40.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:47:43) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+
+ActionView::TemplateError (undefined method `date_field' for #<ActionView::Helpers::FormBuilder:0x26fbc04>) on line #6 of app/views/drives/new.html.erb:
+3: <% form_for(@drive) do |f| %>
+4:   <%= f.error_messages %>
+5: 	Name This Drive:  <%= f.text_field :name %></br>
+6: 	Sign up by:  <%= f.date_field :sign_up_by %></br>
+7: 	Collect by:  <%= f.date_field :collect_by %></br>	
+8: 	Drive Info (about this drive): <%= f.text_area :info %></br>
+9: 	Collection Instructions:  <%= f.text_area :collection_instructions %></br>
+
+    app/views/drives/new.html.erb:6
+    app/views/drives/new.html.erb:3
+    app/controllers/drives_controller.rb:29:in `new'
+
+Rendered rescues/_trace (92.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.9ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:48:45) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 126ms (View: 118, DB: 1) | 200 OK [http://localhost/drives/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:49:07) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/drives/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:49:20) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 18ms (View: 10, DB: 0) | 200 OK [http://localhost/drives/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:49:44) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 19ms (View: 10, DB: 0) | 200 OK [http://localhost/drives/new]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:50:27) [GET]
+
+NoMethodError (undefined method `default' for #<DrivesController:0x27eee04>):
+  app/controllers/drives_controller.rb:30:in `new'
+
+Rendered rescues/_trace (33.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.6ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:50:47) [GET]
+Rendering template within layouts/default
+Rendering drives/new
+Rendered layouts/_head_tag (1.3ms)
+Completed in 21ms (View: 13, DB: 2) | 200 OK [http://localhost/drives/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-30 08:50:48) [GET]
+
+ActionController::RoutingError (No route matches "/images/favicon.ico" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-30 08:50:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/favicon.ico" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.8ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:50:51) [GET]
+Rendering template within layouts/default
+Rendering drives/new
+Rendered layouts/_head_tag (0.8ms)
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://localhost/drives/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (6.5ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 08:51:56) [GET]
+Rendering template within layouts/default
+Rendering drives/new
+Rendered layouts/_head_tag (0.8ms)
+Rendered layouts/_footer (0.3ms)
+Completed in 21ms (View: 13, DB: 7) | 200 OK [http://localhost/drives/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 08:52:30) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"w+DNwL6uUoLArVkc2KI1ceRySrNfDL4wZBgjtkfrCO4=", "drive"=>{"name"=>"Welcome To Homerica", "info"=>"We getting stuff for people", "collect_by(1i)"=>"2009", "collect_by(2i)"=>"8", "collect_by(3i)"=>"30", "sign_up_by(1i)"=>"2009", "sign_up_by(2i)"=>"7", "sign_up_by(3i)"=>"31", "collection_instructions"=>"Bring it to my house"}}
+  [4;35;1mDrive Load (1.4ms)[0m   [0mSELECT * FROM "drives" [0m
+Rendering template within layouts/default
+Rendering drives/index
+Rendered layouts/_head_tag (0.8ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 8ms (View: 2, DB: 2) | 200 OK [http://localhost/drives]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 08:52:42) [GET]
+  [4;36;1mDrive Load (1.4ms)[0m   [0;1mSELECT * FROM "drives" [0m
+Rendering template within layouts/default
+Rendering drives/index
+Rendered layouts/_head_tag (0.8ms)
+Rendered layouts/_footer (0.0ms)
+Completed in 7ms (View: 2, DB: 2) | 200 OK [http://localhost/drives]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mDrive Load (1.6ms)[0m   [0;1mSELECT * FROM "drives" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 09:06:21) [GET]
+Rendering template within layouts/default
+Rendering drives/new
+Rendered layouts/_head_tag (1.5ms)
+Rendered layouts/_footer (0.3ms)
+Completed in 150ms (View: 142, DB: 0) | 200 OK [http://localhost/drives/new]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 09:06:59) [GET]
+Rendering template within layouts/default
+Rendering drives/new
+Rendered layouts/_head_tag (1.8ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 20ms (View: 12, DB: 1) | 200 OK [http://localhost/drives/new]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (12.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (30.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (251.7ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (518.3ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (46.2ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (4.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (11.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (38.5ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (361.6ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (17.0ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (2.3ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (11.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (17.7ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (205.1ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (16.2ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (14.7ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (240.9ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (17.4ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (18.0ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (220.0ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (11.3ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (14.0ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (205.5ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (11.0ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (12.1ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (304.9ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (11.0ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (3.3ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (14.7ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (210.0ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (12.9ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (17.3ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (215.2ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (10.3ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (17.0ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (215.9ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (10.1ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (17.6ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (262.8ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (11.2ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (14.5ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (198.4ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (11.0ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (2.3ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (3.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (17.1ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (224.5ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (35.3ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (3.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (226.7ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (10.8ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (226.4ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (19.1ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (3.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (15.7ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (212.7ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (24.8ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (6.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (15.2ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (206.1ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (10.3ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (116.7ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (1364.6ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (12.9ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (198.3ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (10.2ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MainController#index (for 127.0.0.1 at 2009-07-30 22:07:50) [GET]
+Rendering main/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 22:07:52) [GET]
+  [4;36;1mDrive Load (53.6ms)[0m   [0;1mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 158ms (View: 99, DB: 54) | 200 OK [http://localhost/drives]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-30 22:07:54) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 210ms (View: 126, DB: 0) | 200 OK [http://localhost/drives/new]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#create (for 127.0.0.1 at 2009-07-30 22:08:06) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"tIeoES8TUrG4VU/T1+Z3T5q7fwVVJ5jUn9M/olPAUQI=", "drive"=>{"name"=>"One Two", "info"=>"Info", "collect_by(1i)"=>"2009", "collect_by(2i)"=>"7", "collect_by(3i)"=>"31", "sign_up_by(1i)"=>"2009", "sign_up_by(2i)"=>"7", "sign_up_by(3i)"=>"31", "collection_instructions"=>"Instructions"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mDrive Create (18.8ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(E'One Two', '2009-07-31 03:08:06.238891', E'Info', '2009-07-31 00:00:00.000000', '2009-07-31 00:00:00.000000', E'Instructions', '2009-07-31 03:08:06.238891')[0m
+  [4;35;1mSQL (26.7ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/drives/1
+Completed in 191ms (DB: 47) | 302 Found [http://localhost/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#show (for 127.0.0.1 at 2009-07-30 22:08:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDrive Load (0.6ms)[0m   [0mSELECT * FROM "drives" WHERE ("drives"."id" = 1) [0m
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 13ms (View: 4, DB: 1) | 200 OK [http://localhost/drives/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 22:08:09) [GET]
+  [4;36;1mDrive Load (1.4ms)[0m   [0;1mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 11ms (View: 5, DB: 2) | 200 OK [http://localhost/drives]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#show (for 127.0.0.1 at 2009-07-30 22:08:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDrive Load (0.5ms)[0m   [0mSELECT * FROM "drives" WHERE ("drives"."id" = 1) [0m
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 11ms (View: 1, DB: 1) | 200 OK [http://localhost/drives/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 22:08:14) [GET]
+  [4;36;1mDrive Load (1.3ms)[0m   [0;1mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 11ms (View: 6, DB: 2) | 200 OK [http://localhost/drives]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-30 22:09:44) [GET]
+  [4;35;1mDrive Load (1.4ms)[0m   [0mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 10ms (View: 5, DB: 2) | 200 OK [http://localhost/drives]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#show (for 127.0.0.1 at 2009-07-30 22:09:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDrive Load (0.6ms)[0m   [0;1mSELECT * FROM "drives" WHERE ("drives"."id" = 1) [0m
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 16ms (View: 4, DB: 1) | 200 OK [http://localhost/drives/1]

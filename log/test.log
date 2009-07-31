@@ -1,0 +1,4020 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (40.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDrives (20090730124749)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDrives (20090730124749)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (31.3ms)[0m   [0;1mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.8ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(E'My Great Drive', '2009-07-30 12:56:01.730830', E'WE will be collecting items for a family arrive in the US. Please sign up and share your bread!', '2009-08-12 05:00:00.000000', '2009-07-25 05:00:00.000000', E'Bring items to Doug''s garage whenever you have them.', '2009-07-30 12:56:01.730830')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDrives (20090730124749)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mDROP TABLE "drives"[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090730124749'[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "drives" does not exist
+: SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"drives"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDrives (20090730124749)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (11.4ms)[0m   [0;1mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrives Create (1.0ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:33:04.409069', NULL, NULL, NULL, NULL, '2009-07-31 02:33:04.409069')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:33:04) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 7) | 302 Found [http://test.host/drives/destroy/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:33:04) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drives/destroy/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:33:04) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/update/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:33:04) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/update/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:33:04) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/update/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:33:04) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/update/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:33:04) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1007
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/update/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:33:04) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1008
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/update/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:33:04) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/create?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:33:04) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/create?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:33:04) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Redirected to http://test.host/drives/1011
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/create?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:33:04) [POST]
+  Parameters: {"drive"=>{}}
+Redirected to http://test.host/drives/1012
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/create?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 21:33:04) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/edit/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 21:33:04) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 21:33:04) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/show/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 21:33:04) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.2ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:33:04.493371', NULL, NULL, NULL, NULL, '2009-07-31 02:33:04.493371')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (21.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (25.8ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrives Create (0.7ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:34:26.716680', NULL, NULL, NULL, NULL, '2009-07-31 02:34:26.716680')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:34:26) [DELETE]
+  Parameters: {"id"=>"37"}
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:34:26) [DELETE]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:34:26) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 7) | 200 OK [http://test.host/drives/update/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:34:26) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/update/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:34:26) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/update/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:34:26) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/update/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:34:26) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:34:26) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:34:26) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/drives/create?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:34:26) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/create?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:34:26) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:34:26) [POST]
+  Parameters: {"drive"=>{}}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 21:34:26) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/drives/edit/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 21:34:26) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 21:34:26) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/show/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 21:34:26) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.2ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:34:26.797142', NULL, NULL, NULL, NULL, '2009-07-31 02:34:26.797142')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrives Create (0.7ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:44:31.139883', NULL, NULL, NULL, NULL, '2009-07-31 02:44:31.139883')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:44:31) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 6) | 302 Found [http://test.host/drives/destroy/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:44:31) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drives/destroy/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:44:31) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/update/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:44:31) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/update/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:44:31) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/update/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:44:31) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/update/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:44:31) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1007
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/update/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:44:31) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1008
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/update/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:44:31) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/create?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:44:31) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/create?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:44:31) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Redirected to http://test.host/drives/1011
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/create?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:44:31) [POST]
+  Parameters: {"drive"=>{}}
+Redirected to http://test.host/drives/1012
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/create?]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 21:44:31) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/edit/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 21:44:31) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 21:44:31) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/show/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 21:44:31) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.2ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:44:31.220736', NULL, NULL, NULL, NULL, '2009-07-31 02:44:31.220736')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrives Create (0.7ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:47:45.352652', NULL, NULL, NULL, NULL, '2009-07-31 02:47:45.352652')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:47:45) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 6) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:47:45) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:47:45) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:47:45) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:47:45) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:47:45) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:47:45) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1007
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:47:45) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1008
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:47:45) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:47:45) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:47:45) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Redirected to http://test.host/drives/1011
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:47:45) [POST]
+  Parameters: {"drive"=>{}}
+Redirected to http://test.host/drives/1012
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 21:47:45) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 21:47:45) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 21:47:45) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 21:47:45) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.2ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:47:45.433727', NULL, NULL, NULL, NULL, '2009-07-31 02:47:45.433727')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrives Create (0.9ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:48:54.838812', NULL, NULL, NULL, NULL, '2009-07-31 02:48:54.838812')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:48:54) [DELETE]
+  Parameters: {"id"=>"37"}
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:48:54) [DELETE]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:48:54) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 7) | 200 OK [http://test.host/drive?drive%5Bthese%5D=params&id=37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:48:54) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drive?id=1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:48:54) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drive?id=1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:48:54) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drive?drive%5Bthese%5D=params&id=37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:48:54) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:48:54) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:48:54) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/drive?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:48:54) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drive?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:48:54) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:48:54) [POST]
+  Parameters: {"drive"=>{}}
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 21:48:54) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/drive/edit?id=37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 21:48:54) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drive/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 21:48:54) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drive?id=37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.2ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:48:54.922472', NULL, NULL, NULL, NULL, '2009-07-31 02:48:54.922472')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrives Create (0.7ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:49:18.626679', NULL, NULL, NULL, NULL, '2009-07-31 02:49:18.626679')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:49:18) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 6) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:49:18) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:49:18) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:49:18) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:49:18) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:49:18) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:49:18) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1007
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:49:18) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1008
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:49:18) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:49:18) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:49:18) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Redirected to http://test.host/drives/1011
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:49:18) [POST]
+  Parameters: {"drive"=>{}}
+Redirected to http://test.host/drives/1012
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 21:49:18) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 21:49:18) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 21:49:18) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 21:49:18) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.2ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:49:18.707273', NULL, NULL, NULL, NULL, '2009-07-31 02:49:18.707273')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrives Create (0.7ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:49:42.243779', NULL, NULL, NULL, NULL, '2009-07-31 02:49:42.243779')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:49:42) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 6) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:49:42) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:49:42) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:49:42) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:49:42) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:49:42) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:49:42) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1007
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:49:42) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1008
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:49:42) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:49:42) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:49:42) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Redirected to http://test.host/drives/1011
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:49:42) [POST]
+  Parameters: {"drive"=>{}}
+Redirected to http://test.host/drives/1012
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 21:49:42) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 21:49:42) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 21:49:42) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 21:49:42) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.2ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:49:42.327063', NULL, NULL, NULL, NULL, '2009-07-31 02:49:42.327063')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrives Create (0.7ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:50:59.505733', NULL, NULL, NULL, NULL, '2009-07-31 02:50:59.505733')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:50:59) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 6) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:50:59) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:50:59) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:50:59) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:50:59) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:50:59) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:50:59) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:50:59) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:50:59) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:50:59) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:50:59) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:50:59) [POST]
+  Parameters: {"drive"=>{}}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 21:50:59) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 21:50:59) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 21:50:59) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 21:50:59) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.2ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:50:59.586222', NULL, NULL, NULL, NULL, '2009-07-31 02:50:59.586222')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (1.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (8.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrives Create (0.8ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:52:02.097157', NULL, NULL, NULL, NULL, '2009-07-31 02:52:02.097157')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.2ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:52:02.107741', NULL, NULL, NULL, NULL, '2009-07-31 02:52:02.107741')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:52:02) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:52:02) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:52:02) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:52:02) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:52:02) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:52:02) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:52:02) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:52:02) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:52:02) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:52:02) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:52:02) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:52:02) [POST]
+  Parameters: {"drive"=>{}}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 21:52:02) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 21:52:02) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 21:52:02) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 21:52:02) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.7ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:53:36.406445', NULL, NULL, NULL, NULL, '2009-07-31 02:53:36.406445')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:53:36) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:53:36) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:53:36) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:53:36) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:53:36) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:53:36) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:53:36) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:53:36) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:53:36) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:53:36) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:53:36) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:53:36) [POST]
+  Parameters: {"drive"=>{}}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 21:53:36) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 21:53:36) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 21:53:36) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 21:53:36) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.7ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 02:55:52.286217', NULL, NULL, NULL, NULL, '2009-07-31 02:55:52.286217')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:55:52) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 21:55:52) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:55:52) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:55:52) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:55:52) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:55:52) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:55:52) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 21:55:52) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:55:52) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:55:52) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:55:52) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 21:55:52) [POST]
+  Parameters: {"drive"=>{}}
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 21:55:52) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 21:55:52) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 21:55:52) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 21:55:52) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 22:00:45) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 22:00:45) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 22:00:45) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 22:00:45) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:00:45) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:00:45) [POST]
+  Parameters: {"drive"=>{}}
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:00:45) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:00:45) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:00:45) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:00:45) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:00:45) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:00:45) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:00:45) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:00:45) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:00:45) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 1ms (DB: 1) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:00:45) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 1ms (DB: 1) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 22:01:21) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 2ms (View: 0, DB: 1) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 22:01:21) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 22:01:21) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 22:01:21) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:01:21) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Redirected to http://test.host/drives/1005
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:01:21) [POST]
+  Parameters: {"drive"=>{}}
+Redirected to http://test.host/drives/1006
+Completed in 1ms (DB: 1) | 302 Found [http://test.host/drives?]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:01:21) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:01:21) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:01:21) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:01:21) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1010
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:01:21) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1011
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:01:21) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:01:21) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:01:21) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:01:21) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:01:21) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.7ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 03:01:30.375956', NULL, NULL, NULL, NULL, '2009-07-31 03:01:30.375956')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:01:30) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:01:30) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:01:30) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (2.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:01:30) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 3) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:01:30) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:01:30) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:01:30) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1012
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:01:30) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1013
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:01:30) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:01:30) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:01:30) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Redirected to http://test.host/drives/1016
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:01:30) [POST]
+  Parameters: {"drive"=>{}}
+Redirected to http://test.host/drives/1017
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 22:01:30) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 22:01:30) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 22:01:30) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 22:01:30) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.7ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 03:02:24.866453', NULL, NULL, NULL, NULL, '2009-07-31 03:02:24.866453')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:02:24) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:02:24) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:02:24) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:02:24) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:02:25) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:02:25) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:02:25) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1012
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:02:25) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1013
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:02:25) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:02:25) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:02:25) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Redirected to http://test.host/drives/1016
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:02:25) [POST]
+  Parameters: {"drive"=>{}}
+Redirected to http://test.host/drives/1017
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 22:02:25) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 22:02:25) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 22:02:25) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 22:02:25) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.7ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 03:03:43.897158', NULL, NULL, NULL, NULL, '2009-07-31 03:03:43.897158')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:03:44) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:03:44) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:03:44) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:03:44) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:03:44) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:03:44) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:03:44) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1012
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:03:44) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1013
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:03:44) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:03:44) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:03:44) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Redirected to http://test.host/drives/1016
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:03:44) [POST]
+  Parameters: {"drive"=>{}}
+Redirected to http://test.host/drives/1017
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 22:03:44) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 22:03:44) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 22:03:44) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 22:03:44) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.7ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 03:05:05.687204', NULL, NULL, NULL, NULL, '2009-07-31 03:05:05.687204')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:05:05) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:05:05) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:05) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:05) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:05) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:05) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (2.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:05) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1012
+Completed in 1ms (DB: 3) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:05) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1013
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:05:05) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:05:05) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:05:05) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Redirected to http://test.host/drives/1016
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:05:05) [POST]
+  Parameters: {"drive"=>{}}
+Redirected to http://test.host/drives/1017
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 22:05:05) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 22:05:05) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 22:05:05) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 22:05:05) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.7ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 03:05:35.518484', NULL, NULL, NULL, NULL, '2009-07-31 03:05:35.518484')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:05:35) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:05:35) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:35) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:35) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:35) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:35) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:35) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1012
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:35) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1013
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (1.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:05:35) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (19.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:05:35) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 19) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:05:35) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Redirected to http://test.host/drives/1016
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:05:35) [POST]
+  Parameters: {"drive"=>{}}
+Redirected to http://test.host/drives/1017
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 22:05:35) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 22:05:35) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (1.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 22:05:35) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 2) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 22:05:35) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.9ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 03:05:52.737161', NULL, NULL, NULL, NULL, '2009-07-31 03:05:52.737161')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:05:52) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:05:52) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:52) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:52) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:52) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (2.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:52) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 2) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:52) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1012
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:05:52) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1013
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:05:52) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:05:52) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:05:52) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Redirected to http://test.host/drives/1016
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:05:52) [POST]
+  Parameters: {"drive"=>{}}
+Redirected to http://test.host/drives/1017
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 22:05:52) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 22:05:52) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 22:05:52) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 22:05:52) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.7ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 03:07:16.866412', NULL, NULL, NULL, NULL, '2009-07-31 03:07:16.866412')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:07:16) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:07:16) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 0ms (DB: 1) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:07:16) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:07:16) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:07:16) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:07:17) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:07:17) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1012
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:07:17) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1013
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:07:17) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:07:17) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:07:17) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Redirected to http://test.host/drives/1016
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:07:17) [POST]
+  Parameters: {"drive"=>{}}
+Redirected to http://test.host/drives/1017
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 22:07:17) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 22:07:17) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 22:07:17) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 22:07:17) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mDrive Create (0.7ms)[0m   [0;1mINSERT INTO "drives" ("name", "updated_at", "info", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(NULL, '2009-07-31 03:07:34.742462', NULL, NULL, NULL, NULL, '2009-07-31 03:07:34.742462')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT currval('drives_id_seq')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/edit.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+Rendering drives/new.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/index.html.erb
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+Rendering drives/show.html.erb
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:07:34) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/drives
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/drives/37]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#destroy (for 0.0.0.0 at 2009-07-30 22:07:34) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:07:34) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:07:34) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:07:34) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:07:34) [PUT]
+  Parameters: {"id"=>"37", "drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:07:34) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1012
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#update (for 0.0.0.0 at 2009-07-30 22:07:34) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/drives/1013
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:07:34) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:07:34) [POST]
+  Parameters: {"drive"=>{}}
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives?]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:07:34) [POST]
+  Parameters: {"drive"=>{"these"=>"params"}}
+Redirected to http://test.host/drives/1016
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?drive%5Bthese%5D=params]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#create (for 0.0.0.0 at 2009-07-30 22:07:35) [POST]
+  Parameters: {"drive"=>{}}
+Redirected to http://test.host/drives/1017
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/drives?]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#edit (for 0.0.0.0 at 2009-07-30 22:07:35) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37/edit]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#new (for 0.0.0.0 at 2009-07-30 22:07:35) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#show (for 0.0.0.0 at 2009-07-30 22:07:35) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives/37]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing DrivesController#index (for 0.0.0.0 at 2009-07-30 22:07:35) [GET]
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/drives]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m

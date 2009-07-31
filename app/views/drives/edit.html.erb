@@ -1,0 +1,12 @@
+<h1>Editing drive</h1>
+
+<% form_for(@drive) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', drive_path(@drive) %> |
+<%= link_to 'Back', drives_path %>
