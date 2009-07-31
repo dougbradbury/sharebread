@@ -1072,3 +1072,306 @@ Processing DrivesController#show (for 127.0.0.1 at 2009-07-30 22:09:47) [GET]
 Rendering template within layouts/drives
 Rendering drives/show
 Completed in 16ms (View: 4, DB: 1) | 200 OK [http://localhost/drives/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDrives (20090730124749)
+Migrating to CreatePeople (20090731031443)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (85.3ms)[0m   [0;1mCREATE TABLE "people" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "password" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (10.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090731031443')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (13.7ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (208.9ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (26.1ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (5.1ms)[0m   [0;1mCREATE TABLE "people" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "password" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090731031443')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (18.0ms)[0m   [0;1mDROP DATABASE "sharebread_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (209.3ms)[0m   [0;1mCREATE DATABASE "sharebread_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (10.2ms)[0m   [0mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (7.3ms)[0m   [0;1mCREATE TABLE "people" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "password" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (13.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090731031443')[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDrives (20090730124749)
+Migrating to CreatePeople (20090731031443)
+Migrating to AddOrganizerToDrive (20090731032446)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mALTER TABLE "drives" ADD COLUMN "organizer_id" int[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090731032446')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddOrganizerToDrive (20090731032446)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mALTER TABLE "drives" DROP "organizer_id"[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090731032446'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Migrating to CreatePeople (20090731031443)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (167.7ms)[0m   [0mDROP TABLE "people"[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090731031443'[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCOMMIT[0m
+Migrating to CreateDrives (20090730124749)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mDROP TABLE "drives"[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090730124749'[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDrives (20090730124749)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (66.4ms)[0m   [0;1mCREATE TABLE "drives" ("id" serial primary key, "name" character varying(255), "sign_up_by" timestamp, "collect_by" timestamp, "info" text, "collection_instructions" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090730124749')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreatePeople (20090731031443)
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "people" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "password" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090731031443')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+Migrating to AddOrganizerToDrive (20090731032446)
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "drives" ADD COLUMN "organizer_id" int[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090731032446')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDrives (20090730124749)
+Migrating to CreatePeople (20090731031443)
+Migrating to AddOrganizerToDrive (20090731032446)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MainController#index (for 127.0.0.1 at 2009-07-31 07:01:19) [GET]
+Rendering main/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-31 07:01:22) [GET]
+  [4;36;1mDrive Load (1.5ms)[0m   [0;1mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 18ms (View: 9, DB: 2) | 200 OK [http://localhost/drives]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-31 07:01:28) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+
+ActionView::TemplateError (undefined method `organizer_name' for #<Drive:0x267bcd4>) on line #12 of app/views/drives/new.html.erb:
+9: 	<p>Collection Instructions:  </p><p><%= f.text_area :collection_instructions %></p>
+10: 	
+11: 	<h3>Organizer's Info</h3>
+12: 	<p>Name: <%= f.text_field :organizer_name %><p>
+13: 	<p>Email: <%= f.text_field :organizer_email %><p>  
+14: <p>
+15:     <%= f.submit 'Create' %>
+
+    app/views/drives/new.html.erb:12
+    app/views/drives/new.html.erb:3
+    app/controllers/drives_controller.rb:29:in `new'
+
+Rendered rescues/_trace (44.4ms)
+Rendered rescues/_request_and_response (18.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-31 07:06:46) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/drives/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#create (for 127.0.0.1 at 2009-07-31 07:07:22) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"tIeoES8TUrG4VU/T1+Z3T5q7fwVVJ5jUn9M/olPAUQI=", "drive"=>{"name"=>"Welcome Pack 09", "organizer_email"=>"doug@bradbury.cc", "info"=>"gave my lunch & learn presentation on Scheme Friday, and it went pretty well. I found that I had forgotten to correct one of my slide mistakes, but aside from that I felt good about it. I went through the basics of Scheme/Lisp syntax and talked through some examples, and then finished up with the prime factors kata in Scheme. It went almost twice as long as I’d expected, since we stopped several times to discuss and answer questions. I took suggestions on the kata as well, which also slowed things down, but I felt like it was a better way to teach the process of refactoring to an inner recursive function (in place of what would be a loop in an imperative language). Everyone seemed interested and I got some great advice afterwards. The biggest things were that I didn’t always stand up (sometimes camping out in a chair) and that I kind of half-heartedly slapped a name on the presentation (”Scheme for Rubyists”) with only a few references to Ruby (where I could have had comparable Ruby examples for all my Scheme code).", "collect_by(1i)"=>"2009", "collect_by(2i)"=>"7", "organizer_name"=>"Doug Bradbury", "collect_by(3i)"=>"31", "sign_up_by(1i)"=>"2009", "sign_up_by(2i)"=>"7", "sign_up_by(3i)"=>"31", "collection_instructions"=>"ay afternoon and this weekend, I got a basic working version of Tic-Tac-Toe using Swing in Scala. I still have plenty to do: just as before, with Java Swing, I was basically spiking to learn the framework, and so there are some GUI tests missing. For now, I’ve put in TODO’s for implementation code I don’t have tests for; tomorrow I’ll start commenting out those pieces of code and driving them test-first. I feel good about my board and player classes; Friday I implemented some in-memory caching to speed up the computer player’s board-scoring computation. I still need to do some thinking about the technical article part of my apprenticeship challenges. I’m leaning towards something on functional programming, perhaps a few refactorings from imperative code to functional."}}
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mPerson Create (0.9ms)[0m   [0;1mINSERT INTO "people" ("name", "updated_at", "password", "email", "created_at") VALUES(NULL, '2009-07-31 12:07:22.891174', NULL, E'doug@bradbury.cc', '2009-07-31 12:07:22.891174')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT currval('people_id_seq')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPerson Update (0.4ms)[0m   [0;1mUPDATE "people" SET "name" = E'Doug Bradbury', "updated_at" = '2009-07-31 12:07:22.907108' WHERE "id" = 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mDrive Create (0.6ms)[0m   [0mINSERT INTO "drives" ("name", "updated_at", "info", "organizer_id", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(E'Welcome Pack 09', '2009-07-31 12:07:22.910093', E'gave my lunch & learn presentation on Scheme Friday, and it went pretty well. I found that I had forgotten to correct one of my slide mistakes, but aside from that I felt good about it. I went through the basics of Scheme/Lisp syntax and talked through some examples, and then finished up with the prime factors kata in Scheme. It went almost twice as long as I’d expected, since we stopped several times to discuss and answer questions. I took suggestions on the kata as well, which also slowed things down, but I felt like it was a better way to teach the process of refactoring to an inner recursive function (in place of what would be a loop in an imperative language). Everyone seemed interested and I got some great advice afterwards. The biggest things were that I didn’t always stand up (sometimes camping out in a chair) and that I kind of half-heartedly slapped a name on the presentation (”Scheme for Rubyists”) with only a few references to Ruby (where I could have had comparable Ruby examples for all my Scheme code).', 1, '2009-07-31 00:00:00.000000', '2009-07-31 00:00:00.000000', E'ay afternoon and this weekend, I got a basic working version of Tic-Tac-Toe using Swing in Scala. I still have plenty to do: just as before, with Java Swing, I was basically spiking to learn the framework, and so there are some GUI tests missing. For now, I’ve put in TODO’s for implementation code I don’t have tests for; tomorrow I’ll start commenting out those pieces of code and driving them test-first. I feel good about my board and player classes; Friday I implemented some in-memory caching to speed up the computer player’s board-scoring computation. I still need to do some thinking about the technical article part of my apprenticeship challenges. I’m leaning towards something on functional programming, perhaps a few refactorings from imperative code to functional.', '2009-07-31 12:07:22.910093')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT currval('drives_id_seq')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/drives/1
+Completed in 39ms (DB: 5) | 302 Found [http://localhost/drives]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#show (for 127.0.0.1 at 2009-07-31 07:07:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDrive Load (0.6ms)[0m   [0;1mSELECT * FROM "drives" WHERE ("drives"."id" = 1) [0m
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://localhost/drives/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-31 07:07:28) [GET]
+  [4;35;1mDrive Load (1.6ms)[0m   [0mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 11ms (View: 5, DB: 2) | 200 OK [http://localhost/drives]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#show (for 127.0.0.1 at 2009-07-31 07:07:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDrive Load (0.6ms)[0m   [0;1mSELECT * FROM "drives" WHERE ("drives"."id" = 1) [0m
+Rendering template within layouts/drives
+Rendering drives/show
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/drives/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-31 07:07:33) [GET]
+  [4;35;1mDrive Load (1.4ms)[0m   [0mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 10ms (View: 5, DB: 2) | 200 OK [http://localhost/drives]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#show (for 127.0.0.1 at 2009-07-31 07:09:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDrive Load (0.6ms)[0m   [0;1mSELECT * FROM "drives" WHERE ("drives"."id" = 1) [0m
+Rendering template within layouts/drives
+Rendering drives/show
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/drives/1]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-31 07:24:24) [GET]
+  [4;36;1mDrive Load (1.5ms)[0m   [0;1mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 11ms (View: 5, DB: 2) | 200 OK [http://localhost/drives]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#new (for 127.0.0.1 at 2009-07-31 07:24:27) [GET]
+Rendering template within layouts/drives
+Rendering drives/new
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/drives/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#create (for 127.0.0.1 at 2009-07-31 07:24:55) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"tIeoES8TUrG4VU/T1+Z3T5q7fwVVJ5jUn9M/olPAUQI=", "drive"=>{"name"=>"Welcome Pack 10", "organizer_email"=>"doug@bradbury.cc", "info"=>"Hello Again", "collect_by(1i)"=>"2009", "collect_by(2i)"=>"7", "organizer_name"=>"Douglas K Bradbury", "collect_by(3i)"=>"31", "sign_up_by(1i)"=>"2009", "sign_up_by(2i)"=>"7", "sign_up_by(3i)"=>"31", "collection_instructions"=>""}}
+  [4;35;1mPerson Load (1.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."email" = E'doug@bradbury.cc') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mDrive Create (0.6ms)[0m   [0mINSERT INTO "drives" ("name", "updated_at", "info", "organizer_id", "collect_by", "sign_up_by", "collection_instructions", "created_at") VALUES(E'Welcome Pack 10', '2009-07-31 12:24:55.681013', E'Hello Again', 1, '2009-07-31 00:00:00.000000', '2009-07-31 00:00:00.000000', E'', '2009-07-31 12:24:55.681013')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT currval('drives_id_seq')[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/drives/2
+Completed in 47ms (DB: 6) | 302 Found [http://localhost/drives]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#show (for 127.0.0.1 at 2009-07-31 07:24:55) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDrive Load (0.6ms)[0m   [0;1mSELECT * FROM "drives" WHERE ("drives"."id" = 2) [0m
+Rendering template within layouts/drives
+Rendering drives/show
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/drives/2]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-31 07:25:00) [GET]
+  [4;36;1mDrive Load (1.5ms)[0m   [0;1mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 11ms (View: 5, DB: 2) | 200 OK [http://localhost/drives]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#show (for 127.0.0.1 at 2009-07-31 07:25:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDrive Load (0.6ms)[0m   [0mSELECT * FROM "drives" WHERE ("drives"."id" = 1) [0m
+Rendering template within layouts/drives
+Rendering drives/show
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/drives/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DrivesController#index (for 127.0.0.1 at 2009-07-31 07:25:04) [GET]
+  [4;35;1mDrive Load (1.5ms)[0m   [0mSELECT * FROM "drives" [0m
+Rendering template within layouts/drives
+Rendering drives/index
+Completed in 11ms (View: 6, DB: 2) | 200 OK [http://localhost/drives]

@@ -5,10 +5,13 @@
 	<p>Name This Drive:  <%= f.text_field :name %></p>
 	<p>Sign up by:  <%= f.date_select :sign_up_by %></p>
 	<p>Collect by:  <%= f.date_select :collect_by %></p>
-	<p>Drive Info (about this drive): </br><%= f.text_area :info %></p>
-	<p>Collection Instructions:  </br><%= f.text_area :collection_instructions %></p>
-
-  <p>
+	<p>Drive Info (about this drive): </p><p><%= f.text_area :info %></p>
+	<p>Collection Instructions:  </p><p><%= f.text_area :collection_instructions %></p>
+	
+	<h3>Organizer's Info</h3>
+	<p>Name: <%= f.text_field :organizer_name %><p>
+	<p>Email: <%= f.text_field :organizer_email %><p>  
+<p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>

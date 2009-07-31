@@ -2,12 +2,50 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Drive do
   before(:each) do
+    Drive.destroy_all
+    Person.destroy_all
     @valid_attributes = {
       
     }
+    @drive = Drive.create!(@valid_attributes)
   end
+  
+  it "should have organizers info" do
+    @drive = Drive.create!(@valid_attributes)
+    @drive.organizer_name = "Doug Bradbury"
+    @drive.organizer_email = "doug@example.com"
 
-  it "should create a new instance given valid attributes" do
-    Drive.create!(@valid_attributes)
+    @drive.organizer.should_not be_nil
+    @drive.organizer.email.should == "doug@example.com"
+    @drive.organizer.name.should == "Doug Bradbury"
+    @drive.organizer_email.should == "doug@example.com"
+    @drive.organizer_name.should == "Doug Bradbury"
+    
+    @drive.save!
+    @drive.reload
+    @drive.organizer.should_not be_nil
+    @drive.organizer.email.should == "doug@example.com"
+    @drive.organizer.name.should == "Doug Bradbury"    
+    Person.find(:all).size.should == 1
+  end
+  
+  it "should have blank organizer info if one hasn't been created yet" do
+    @drive.organizer_email.should == ""
+    @drive.organizer_name.should == ""    
+  end
+  
+  it "should find existing person by email" do
+    person = Person.create!(:name => "Gary Larson", :email => "gary@farside.com")
+    @drive.organizer_email = "gary@farside.com"
+    @drive.organizer.id.should == person.id
+  end
+  
+  it "should replace the organizer with the one found by email" do
+    person = Person.create!(:name => "Gary Larson", :email => "gary@farside.com")
+    @drive.organizer_name = "Joe Quigley"
+    @drive.organizer_email = "gary@farside.com"
+    @drive.organizer.id.should == person.id    
+    @drive.organizer.name.should == "Gary Larson"
+    Person.find(:all).size.should == 1
   end
 end
