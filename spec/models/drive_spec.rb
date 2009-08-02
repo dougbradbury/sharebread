@@ -48,4 +48,10 @@ describe Drive do
     @drive.organizer.name.should == "Gary Larson"
     Person.find(:all).size.should == 1
   end
+  
+  it "should add an item" do
+    @drive.items << item = Item.create(:description => "Silverware Set", :needed => 1)
+    @drive.items.size.should == 1
+    item.drive.id.should == @drive.id
+  end
 end

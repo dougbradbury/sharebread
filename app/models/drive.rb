@@ -1,5 +1,6 @@
 class Drive < ActiveRecord::Base
   belongs_to :organizer, :class_name => "Person"
+  has_many :items
   
   def organizer_name=(name)
     build_organizer unless self.organizer

@@ -41,5 +41,6 @@ ActionController::Routing::Routes.draw do |map|
   # map.connect ':controller/:action/:id'
   # map.connect ':controller/:action/:id.:format'
   map.root :controller => 'main'
-  map.resources :drives, :singular => 'drive'
+  map.resources :drives, :singular => 'drive', :has_many => :items, :shallow => true
+  
 end

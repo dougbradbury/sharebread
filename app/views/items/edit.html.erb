@@ -1,0 +1,11 @@
+<h1>Editing items</h1>
+
+<% form_for(@item) do |f| %>
+  <%= f.error_messages %>
+	<%= render :partial => 'form', :locals => {:f => f}%>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Cancel', drive_items_path(@drive) %>

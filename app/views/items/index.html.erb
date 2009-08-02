@@ -1,0 +1,27 @@
+<h1><%= @drive.name %> Items</h1>
+
+<table>
+  <tr>
+	<td>Description</td>
+	<td>Needed</td>
+	<td>Committed</td>
+	<td>Collected</td>
+	<td></td>
+	<td></td>
+  </tr>
+
+<% @items.each do |item| %>
+  <tr>
+		<td><%=item.description%></td>
+		<td><%=item.needed %></td>
+		<td><%=item.commited %></td>
+		<td><%=item.collected %></td>
+    <td><%= link_to 'Edit', edit_item_path(item) %></td>
+    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New items', new_drive_item_path(@drive) %>

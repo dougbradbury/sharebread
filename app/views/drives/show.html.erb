@@ -2,5 +2,6 @@
 <p><%= @drive.info %></p>
 
 <p>Organized by:  <%= @drive.organizer.name %> &lt;<%=@drive.organizer.email%>&gt;</p>
+<%= link_to 'Items', drive_items_path(@drive) %> |
 <%= link_to 'Edit', edit_drive_path(@drive) %> |
 <%= link_to 'Back', drives_path %>
