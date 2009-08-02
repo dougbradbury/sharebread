@@ -54,4 +54,23 @@ describe Drive do
     @drive.items.size.should == 1
     item.drive.id.should == @drive.id
   end
+  
+  it "should amalgamate a drive" do
+    @drive.items << item = Item.create(:description => "Silverware Set", :needed => 1, :collected => 1)
+    new_drive = Drive.create!(:name => "another drive")
+    new_drive.amalgamate(@drive)
+    new_drive.items.size.should == 1
+    new_drive.items[0].should_not == item
+    new_drive.items[0].description.should == "Silverware Set"
+    new_drive.items[0].needed.should == 1
+    new_drive.items[0].collected.should == 0
+  end
+  
+  it "should have template drives" do
+    @drive.template = true
+    @drive.save!
+    Drive.templates.size.should == 1
+    Drive.templates[0].should == @drive
+  end
+  
 end

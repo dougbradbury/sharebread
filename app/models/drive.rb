@@ -2,6 +2,11 @@ class Drive < ActiveRecord::Base
   belongs_to :organizer, :class_name => "Person"
   has_many :items
   
+  def self.templates
+    Drive.find_all_by_template(true)
+  end
+  
+  
   def organizer_name=(name)
     build_organizer unless self.organizer
     self.organizer.name = name
@@ -19,6 +24,13 @@ class Drive < ActiveRecord::Base
   def organizer_email
     self.organizer.nil? ? "" : self.organizer.email
   end  
+  
+  def amalgamate(drive)
+    drive.items.each do |item|
+      self.items << Item.new(:description => item.description, :needed => item.needed)
+    end
+  end
+  
   
   private
   
